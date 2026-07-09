@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_bottom_sheet"
+    android:paddingTop="16dp">
+
+    <!-- Handle drag indicator -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#E0E0E0"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tvDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pilih Data"
+        android:textColor="#102B5E"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/etDialogSearch"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_search_bar"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="12dp"
+        android:hint="Cari..."
+        android:paddingHorizontal="16dp"
+        android:textColor="#102B5E"
+        android:textColorHint="#9E9E9E"
+        android:textSize="14sp"
+        app:drawableTint="#9E9E9E" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDialogItems"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDialogDone"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="16dp"
+        android:text="Pilih"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:backgroundTint="#102B5E"
+        app:cornerRadius="16dp"
+        android:visibility="gone" />
+
+</LinearLayout>

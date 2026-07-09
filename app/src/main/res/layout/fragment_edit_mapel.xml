@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFD">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:clipToPadding="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Header Section -->
+            <View
+                android:id="@+id/headerBg"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="#102B5E"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Decorative Circles -->
+            <View
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="-60dp"
+                android:layout_marginEnd="-60dp"
+                android:background="@drawable/bg_notification_dot"
+                android:backgroundTint="#1AFFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_notification_dot"
+                android:backgroundTint="#33FFFFFF"
+                android:padding="10dp"
+                android:src="@drawable/ic_chevron_right"
+                android:rotation="180"
+                app:tint="#FFFFFF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/titleContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/btnBack"
+                app:layout_constraintStart_toEndOf="@id/btnBack"
+                app:layout_constraintTop_toTopOf="@id/btnBack">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Detail Mapel"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Informasi Mata Pelajaran"
+                    android:textColor="#B3FFFFFF"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Toggle Action Button (Floating Style) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnActionToggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:text="Edit Data"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:elevation="8dp"
+                app:cornerRadius="24dp"
+                app:backgroundTint="#102B5E"
+                app:strokeWidth="2dp"
+                app:strokeColor="#FFFFFF"
+                app:icon="@android:drawable/ic_menu_edit"
+                app:iconSize="16dp"
+                app:iconTint="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@id/headerBg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/headerBg" />
+
+            <!-- Main Content Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mainCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="6dp"
+                app:layout_constraintTop_toBottomOf="@id/btnActionToggle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Data Mata Pelajaran"
+                        android:textColor="#102B5E"
+                        android:textSize="18sp" />
+
+                    <!-- Kode Mapel -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilKodeMapel"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Kode Mapel"
+                        app:boxStrokeColor="#102B5E"
+                        app:startIconDrawable="@drawable/ic_class"
+                        app:startIconTint="#102B5E">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etKodeMapel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:textColor="#9E9E9E" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Nama Mapel -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilNamaMapel"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Nama Mata Pelajaran"
+                        app:boxStrokeColor="#102B5E"
+                        app:startIconDrawable="@android:drawable/ic_menu_info_details"
+                        app:startIconTint="#102B5E">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNamaMapel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:textColor="#9E9E9E" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Tingkatan -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilTingkatan"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Pilih Tingkatan"
+                        app:boxStrokeColor="#102B5E"
+                        app:startIconDrawable="@drawable/ic_class"
+                        app:startIconTint="#102B5E">
+                        <AutoCompleteTextView
+                            android:id="@+id/actvTingkatan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:inputType="none"
+                            android:textColor="#9E9E9E" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Kategori (Searchable) -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilKategori"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Kategori Mapel"
+                        app:boxStrokeColor="#102B5E"
+                        app:startIconDrawable="@drawable/ic_search"
+                        app:startIconTint="#102B5E">
+                        <AutoCompleteTextView
+                            android:id="@+id/actvKategori"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:inputType="text"
+                            android:textColor="#9E9E9E" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Paket (Searchable) -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPaketJurusan"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="32dp"
+                        android:hint="Pilih Paket"
+                        app:boxStrokeColor="#102B5E"
+                        app:startIconDrawable="@drawable/ic_class"
+                        app:startIconTint="#102B5E">
+                        <AutoCompleteTextView
+                            android:id="@+id/actvPaketJurusan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:inputType="text"
+                            android:textColor="#9E9E9E" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Jam Pelajaran -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilJamPelajaran"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:hint="Jumlah Jam Pelajaran per Minggu (JP)"
+                        app:boxStrokeColor="#102B5E"
+                        app:startIconDrawable="@android:drawable/ic_menu_info_details"
+                        app:startIconTint="#102B5E">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etJamPelajaran"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:enabled="false"
+                            android:text="3"
+                            android:textColor="#9E9E9E" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/tvEditInstruction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*Klik tombol Edit di atas untuk mengubah data"
+                        android:textColor="#9E9E9E"
+                        android:textSize="12sp"
+                        android:fontStyle="italic" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- SPACER JITU -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                app:layout_constraintTop_toBottomOf="@id/mainCard" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- LOADING OVERLAY -->
+    <FrameLayout
+        android:id="@+id/loadingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99FFFFFF"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="30dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_card_rounded"
+            android:padding="32dp">
+            <ImageView
+                android:id="@+id/ivLoadingSpinner"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/avd_login_loading" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Memproses..."
+                android:textColor="#102B5E"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

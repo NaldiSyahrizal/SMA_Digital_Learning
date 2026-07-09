@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.DigitalLearning" parent="Base.Theme.DigitalLearning">
+        <!-- Hide the default Android 12+ splash screen icon to prevent double-logo issue -->
+        <item name="android:windowSplashScreenAnimatedIcon">@android:color/transparent</item>
+        <item name="android:windowSplashScreenBackground">#FFFFFF</item>
+    </style>
+</resources>

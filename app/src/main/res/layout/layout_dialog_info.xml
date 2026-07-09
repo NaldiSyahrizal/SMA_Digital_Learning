@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_card_rounded"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <FrameLayout
+        android:id="@+id/flIconContainer"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:background="@drawable/bg_icon_circle"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/ivDialogIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_check_circle" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Sukses"
+        android:textAlignment="center"
+        android:textColor="#102B5E"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvDialogMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Operasi berhasil dilakukan."
+        android:textAlignment="center"
+        android:textColor="#757575"
+        android:textSize="14sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDialogOk"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Oke"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-black"
+        app:cornerRadius="16dp"
+        app:backgroundTint="#102B5E" />
+
+</LinearLayout>

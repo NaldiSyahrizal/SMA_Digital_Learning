@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="2dp"
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Avatar / Icon on the Left -->
+        <FrameLayout
+            android:id="@+id/avatarContainer"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_card_rounded"
+            android:backgroundTint="#EBF3FC"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_person"
+                app:tint="#102B5E" />
+        </FrameLayout>
+
+        <!-- Teacher Name (Main Bold Text) -->
+        <TextView
+            android:id="@+id/tvTeacherName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Nama Guru"
+            android:textColor="#102B5E"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/avatarContainer"
+            app:layout_constraintEnd_toStartOf="@id/actionContainer"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Metadata Section (Class and Subject Badges) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@id/avatarContainer"
+            app:layout_constraintEnd_toStartOf="@id/actionContainer"
+            app:layout_constraintTop_toBottomOf="@id/tvTeacherName"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- Class Badge -->
+            <TextView
+                android:id="@+id/tvClassName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card_rounded"
+                android:backgroundTint="#F0F4F8"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="Kelas"
+                android:textColor="#102B5E"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Subject Badge -->
+            <TextView
+                android:id="@+id/tvSubjectName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card_rounded"
+                android:backgroundTint="#EBFDF2"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="Mata Pelajaran"
+                android:textColor="#1B5E20"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end" />
+        </LinearLayout>
+
+        <!-- Actions Container on the Right -->
+        <LinearLayout
+            android:id="@+id/actionContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/btnEdit"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="8dp"
+                android:src="@android:drawable/ic_menu_edit"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:tint="#102B5E" />
+
+            <ImageView
+                android:id="@+id/btnDelete"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="8dp"
+                android:layout_marginStart="4dp"
+                android:src="@android:drawable/ic_menu_delete"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:tint="#FF3B30" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

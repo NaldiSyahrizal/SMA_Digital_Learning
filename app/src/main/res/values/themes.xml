@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DigitalLearning" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">#102B5E</item>
+        <item name="colorAccent">#102B5E</item>
+        <item name="android:datePickerDialogTheme">@style/CustomDatePickerTheme</item>
+        <item name="android:timePickerDialogTheme">@style/CustomTimePickerTheme</item>
+    </style>
+
+    <style name="Theme.DigitalLearning" parent="Base.Theme.DigitalLearning" />
+
+    <!-- Date Picker Theme -->
+    <style name="CustomDatePickerTheme" parent="Theme.Material3.Light.Dialog">
+        <item name="colorPrimary">#102B5E</item>
+        <item name="colorAccent">#102B5E</item>
+    </style>
+
+    <!-- Time Picker Theme -->
+    <style name="CustomTimePickerTheme" parent="Theme.Material3.Light.Dialog">
+        <item name="colorPrimary">#102B5E</item>
+        <item name="colorAccent">#102B5E</item>
+    </style>
+
+    <!-- Bottom Sheet Theme -->
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+</resources>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.pab.digitallearning.ui.admin.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_kelolaSiswaFragment"
+            app:destination="@id/kelolaSiswaFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_kelolaGuruFragment"
+            app:destination="@id/kelolaGuruFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_kelolaKelasFragment"
+            app:destination="@id/kelolaKelasFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_kelolaMapelFragment"
+            app:destination="@id/kelolaMapelFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_ploting"
+            app:destination="@id/nav_ploting" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_master_data"
+        android:name="com.pab.digitallearning.ui.admin.manage.main.MasterDataFragment"
+        android:label="Master Data"
+        tools:layout="@layout/fragment_master_data">
+        <action
+            android:id="@+id/action_masterDataFragment_to_kelolaGuruFragment"
+            app:destination="@id/kelolaGuruFragment" />
+        <action
+            android:id="@+id/action_masterDataFragment_to_kelolaSiswaFragment"
+            app:destination="@id/kelolaSiswaFragment" />
+        <action
+            android:id="@+id/action_masterDataFragment_to_kelolaMapelFragment"
+            app:destination="@id/kelolaMapelFragment" />
+        <action
+            android:id="@+id/action_masterDataFragment_to_kelolaKelasFragment"
+            app:destination="@id/kelolaKelasFragment" />
+        <action
+            android:id="@+id/action_masterDataFragment_to_kelolaPaketFragment"
+            app:destination="@id/kelolaPaketFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_ploting"
+        android:name="com.pab.digitallearning.ui.admin.plotting.main.PlotingFragment"
+        android:label="Ploting"
+        tools:layout="@layout/fragment_ploting">
+        <action
+            android:id="@+id/action_plotingFragment_to_plotingSiswaFragment"
+            app:destination="@id/plotingSiswaFragment" />
+        <action
+            android:id="@+id/action_plotingFragment_to_plotingGuruFragment"
+            app:destination="@id/plotingGuruFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/plotingSiswaFragment"
+        android:name="com.pab.digitallearning.ui.admin.plotting.student.PlotingSiswaFragment"
+        android:label="Ploting Murid"
+        tools:layout="@layout/fragment_ploting_siswa">
+        <action
+            android:id="@+id/action_plotingSiswaFragment_to_detailPlotingSiswaFragment"
+            app:destination="@id/detailPlotingSiswaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailPlotingSiswaFragment"
+        android:name="com.pab.digitallearning.ui.admin.plotting.student.DetailPlotingSiswaFragment"
+        android:label="Daftar Siswa Kelas"
+        tools:layout="@layout/fragment_detail_ploting_siswa">
+        <argument
+            android:name="classId"
+            app:argType="long" />
+        <argument
+            android:name="className"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailPlotingSiswaFragment_to_addPlotingSiswaFragment"
+            app:destination="@id/addPlotingSiswaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addPlotingSiswaFragment"
+        android:name="com.pab.digitallearning.ui.admin.plotting.student.AddPlotingSiswaFragment"
+        android:label="Tambah Ploting"
+        tools:layout="@layout/fragment_tambah_ploting_siswa">
+        <argument
+            android:name="classId"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="className"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/plotingGuruFragment"
+        android:name="com.pab.digitallearning.ui.admin.plotting.teacher.PlotingGuruFragment"
+        android:label="Ploting Guru"
+        tools:layout="@layout/fragment_ploting_guru">
+        <action
+            android:id="@+id/action_plotingGuruFragment_to_addPlotingGuruFragment"
+            app:destination="@id/addPlotingGuruFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addPlotingGuruFragment"
+        android:name="com.pab.digitallearning.ui.admin.plotting.teacher.AddPlotingGuruFragment"
+        android:label="Tambah/Edit Ploting Guru"
+        tools:layout="@layout/fragment_tambah_ploting_guru">
+        <argument
+            android:name="assignmentId"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="teacherId"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="subjectId"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="classId"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="teacherName"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="subjectName"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="className"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.pab.digitallearning.ui.common.ProfileFragment"
+        android:label="Profile" />
+
+    <fragment
+        android:id="@+id/kelolaGuruFragment"
+        android:name="com.pab.digitallearning.ui.admin.manage.teacher.KelolaGuruFragment"
+        android:label="Kelola Guru"
+        tools:layout="@layout/fragment_kelola_guru">
+        <action
+            android:id="@+id/action_kelolaGuruFragment_to_addGuruFragment"
+            app:destination="@id/addGuruFragment" />
+        <action
+            android:id="@+id/action_kelolaGuruFragment_to_editGuruFragment"
+            app:destination="@id/editGuruFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addGuruFragment"
+        android:name="com.pab.digitallearning.ui.admin.manage.teacher.AddGuruFragment"
+        android:label="Tambah Guru"
+        tools:layout="@layout/fragment_tambah_guru" />
+
+    <fragment
+        android:id="@+id/editGuruFragment"
+        android:name="com.pab.digitallearning.ui.admin.manage.teacher.EditGuruFragment"
+        android:label="Edit Guru"
+        tools:layout="@layout/fragment_edit_guru" />
+
+    <fragment
+        android:id="@+id/kelolaSiswaFragment"
+        android:name="com.pab.digitallearning.ui.admin.manage.student.KelolaSiswaFragment"
+        android:label="Kelola Siswa"
+        tools:layout="@layout/fragment_kelola_siswa">
+        <action
+            android:id="@+id/action_kelolaSiswaFragment_to_addSiswaFragment"
+            app:destination="@id/addSiswaFragment" />
+        <action
+            android:id="@+id/action_kelolaSiswaFragment_to_editSiswaFragment"
+            app:destination="@id/editSiswaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addSiswaFragment"
+        android:name="com.pab.digitallearning.ui.admin.manage.student.AddSiswaFragment"
+        android:label="Tambah Murid"
+        tools:layout="@layout/fragment_tambah_siswa" />
+
+    <fragment
+        android:id="@+id/editSiswaFragment"
+        android:name="com.pab.digitallearning.ui.admin.manage.student.EditSiswaFragment"
+        android:label="Edit Siswa"
+        tools:layout="@layout/fragment_edit_siswa" />
+
+    <fragment
+        android:id="@+id/kelolaMapelFragment"
+        android:name="com.pab.digitallearning.ui.admin.manage.subject.KelolaMapelFragment"
+        android:label="Kelola Mapel"
+        tools:layout="@layout/fragment_kelola_mapel">
+        <action
+            android:id="@+id/action_kelolaMapelFragment_to_addMapelFragment"
+            app:destination="@id/addMapelFragment" />
+        <action
+            android:id="@+id/action_kelolaMapelFragment_to_editMapelFragment"
+            app:destination="@id/editMapelFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addMapelFragment"
+        android:name="com.pab.digitallearning.ui.admin.manage.subject.AddMapelFragment"
+        android:label="Tambah Mapel"
+        tools:layout="@layout/fragment_tambah_mapel" />
+
+    <fragment
+        android:id="@+id/editMapelFragment"
+        android:name="com.pab.digitallearning.ui.admin.manage.subject.EditMapelFragment"
+        android:label="Edit Mapel"
+        tools:layout="@layout/fragment_edit_mapel">
+        <argument
+            android:name="id"
+            app:argType="long" />
+        <argument
+            android:name="nama"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="kode"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="kategori"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="packages"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/kelolaKelasFragment"
+        android:name="com.pab.digitallearning.ui.admin.manage.classroom.KelolaKelasFragment"
+        android:label="Kelola Kelas"
+        tools:layout="@layout/fragment_kelola_kelas">
+        <action
+            android:id="@+id/action_kelolaKelasFragment_to_addKelasFragment"
+            app:destination="@id/addKelasFragment" />
+        <action
+            android:id="@+id/action_kelolaKelasFragment_to_editKelasFragment"
+            app:destination="@id/editKelasFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addKelasFragment"
+        android:name="com.pab.digitallearning.ui.admin.manage.classroom.AddKelasFragment"
+        android:label="Tambah Kelas"
+        tools:layout="@layout/fragment_tambah_kelas" />
+
+    <fragment
+        android:id="@+id/editKelasFragment"
+        android:name="com.pab.digitallearning.ui.admin.manage.classroom.EditKelasFragment"
+        android:label="Edit Kelas"
+        tools:layout="@layout/fragment_edit_kelas">
+        <argument
+            android:name="id"
+            app:argType="long" />
+        <argument
+            android:name="nama_kelas"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="tingkat"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="wali_kelas_id"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/kelolaPaketFragment"
+        android:name="com.pab.digitallearning.ui.admin.manage.paket.KelolaPaketFragment"
+        android:label="Kelola Paket"
+        tools:layout="@layout/fragment_kelola_paket">
+        <action
+            android:id="@+id/action_kelolaPaketFragment_to_addPaketFragment"
+            app:destination="@id/addPaketFragment" />
+        <action
+            android:id="@+id/action_kelolaPaketFragment_to_editPaketFragment"
+            app:destination="@id/editPaketFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addPaketFragment"
+        android:name="com.pab.digitallearning.ui.admin.manage.paket.AddPaketFragment"
+        android:label="Tambah Paket"
+        tools:layout="@layout/fragment_tambah_paket" />
+
+    <fragment
+        android:id="@+id/editPaketFragment"
+        android:name="com.pab.digitallearning.ui.admin.manage.paket.EditPaketFragment"
+        android:label="Edit Paket"
+        tools:layout="@layout/fragment_edit_paket" />
+
+</navigation>

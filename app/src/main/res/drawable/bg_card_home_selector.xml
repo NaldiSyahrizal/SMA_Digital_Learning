@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Saat ditekan (Pressed) -->
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#102B5E" />
+            <corners android:radius="24dp" />
+        </shape>
+    </item>
+    <!-- Kondisi Default (Terang) -->
+    <item>
+        <shape>
+            <solid android:color="#F4F6FB" />
+            <corners android:radius="24dp" />
+        </shape>
+    </item>
+</selector>

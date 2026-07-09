@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="12dp"
+    android:paddingHorizontal="16dp"
+    android:gravity="center_vertical"
+    android:background="?attr/selectableItemBackground">
+
+    <!-- Kode Mapel -->
+    <TextView
+        android:id="@+id/tvKodeMapel"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:textColor="#102B5E"
+        android:textSize="13sp"
+        android:fontFamily="sans-serif-medium"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+    <View android:layout_width="1dp" android:layout_height="14dp"
+        android:background="#E0E0E0" android:layout_marginHorizontal="6dp"/>
+
+    <!-- Nama Mapel -->
+    <TextView
+        android:id="@+id/tvNamaMapel"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="#102B5E"
+        android:textSize="13sp"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+    <View android:layout_width="1dp" android:layout_height="14dp"
+        android:background="#E0E0E0" android:layout_marginHorizontal="6dp"/>
+
+    <!-- Kategori -->
+    <TextView
+        android:id="@+id/tvKategori"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textColor="#555555"
+        android:textSize="13sp"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+    <View android:layout_width="1dp" android:layout_height="14dp"
+        android:background="#E0E0E0" android:layout_marginHorizontal="6dp"/>
+
+    <!-- Tingkatan -->
+    <TextView
+        android:id="@+id/tvTingkatan"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:textColor="#555555"
+        android:textSize="13sp"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+    <View android:layout_width="1dp" android:layout_height="14dp"
+        android:background="#E0E0E0" android:layout_marginHorizontal="6dp"/>
+
+    <!-- Nama Paket / Jurusan -->
+    <TextView
+        android:id="@+id/tvNamaPaket"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:textColor="#9E9E9E"
+        android:textSize="12sp"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+</LinearLayout>

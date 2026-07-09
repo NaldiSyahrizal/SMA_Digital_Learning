@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- KONTEN LOGIN -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="#F5F7FA">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- HEADER IMAGE -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/gerbang"
+                    android:scaleType="centerCrop" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#66000000" />
+
+                <LinearLayout
+                    android:id="@+id/headerTextContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginBottom="100dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Welcome to"
+                        android:textColor="#CCFFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.05" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="SMA Digital"
+                        android:textColor="#FFFFFF"
+                        android:textSize="40sp"
+                        android:fontFamily="sans-serif-black"
+                        android:includeFontPadding="false" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Learning."
+                        android:textColor="#FFFFFF"
+                        android:textSize="40sp"
+                        android:fontFamily="sans-serif-light"
+                        android:includeFontPadding="false" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="SMAN 1 TALAGA"
+                        android:textAllCaps="true"
+                        android:textColor="#B3FFFFFF"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:letterSpacing="0.15" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!-- FORM CARD -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="-40dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="26dp"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:id="@+id/loginCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sign In"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        android:textColor="#111111" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Login untuk melanjutkan"
+                        android:textSize="14sp"
+                        android:textColor="#777777"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="20dp" />
+
+                    <EditText
+                        android:id="@+id/etUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:hint="Email"
+                        android:paddingStart="18dp"
+                        android:background="@drawable/edit_outline_dark"
+                        android:textSize="15sp"
+                        android:inputType="textEmailAddress" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        app:hintEnabled="false"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="#777777"
+                        app:boxBackgroundMode="none">
+
+                        <EditText
+                            android:id="@+id/etPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:hint="Password"
+                            android:paddingStart="18dp"
+                            android:paddingEnd="48dp"
+                            android:background="@drawable/edit_outline_dark"
+                            android:textSize="15sp"
+                            android:inputType="textPassword" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/tvForgotPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Forgot Password?"
+                        android:textColor="#21286A"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="10dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <Button
+                        android:id="@+id/btnLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="18dp"
+                        android:text="Sign In"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:background="@drawable/btn_color"
+                        app:backgroundTint="#21286A"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- LOADING OVERLAY -->
+    <FrameLayout
+        android:id="@+id/loadingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99FFFFFF"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_card_rounded"
+            android:padding="32dp">
+
+            <ImageView
+                android:id="@+id/ivLoadingSpinner"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/avd_login_loading" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Sedang masuk..."
+                android:textColor="#102B5E"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-medium" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</FrameLayout>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFD">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:clipToPadding="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Header Section -->
+            <View
+                android:id="@+id/headerBg"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#102B5E"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Decorative Circles -->
+            <View
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="-50dp"
+                android:layout_marginEnd="-50dp"
+                android:background="@drawable/bg_notification_dot"
+                android:backgroundTint="#1AFFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_notification_dot"
+                android:backgroundTint="#33FFFFFF"
+                android:padding="10dp"
+                android:src="@drawable/ic_chevron_right"
+                android:rotation="180"
+                app:tint="#FFFFFF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Tambah Guru"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/btnBack"
+                app:layout_constraintStart_toEndOf="@id/btnBack"
+                app:layout_constraintTop_toTopOf="@id/btnBack" />
+
+            <!-- Main Content Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mainCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="6dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Form Guru Baru"
+                        android:textColor="#102B5E"
+                        android:textSize="18sp" />
+
+                    <!-- Nama Lengkap -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilNama"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Nama Lengkap"
+                        app:boxStrokeColor="#102B5E"
+                        app:startIconDrawable="@drawable/ic_student"
+                        app:startIconTint="#102B5E">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNama"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:textColor="#102B5E" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- NIP -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilNip"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="NIP"
+                        app:boxStrokeColor="#102B5E"
+                        app:startIconDrawable="@android:drawable/ic_menu_info_details"
+                        app:startIconTint="#102B5E">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNip"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:textColor="#102B5E" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Jenis Kelamin -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilJenisKelamin"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Jenis Kelamin"
+                        app:boxStrokeColor="#102B5E"
+                        app:startIconDrawable="@drawable/ic_student"
+                        app:startIconTint="#102B5E">
+                        <AutoCompleteTextView
+                            android:id="@+id/actvJenisKelamin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:textColor="#102B5E" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- No Telepon -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilNoTelp"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:hint="No. Telepon"
+                        app:boxStrokeColor="#102B5E"
+                        app:startIconDrawable="@android:drawable/ic_menu_call"
+                        app:startIconTint="#102B5E">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNoTelp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="phone"
+                            android:textColor="#102B5E" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="8dp"
+                        android:background="#E0E0E0" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Informasi Akun"
+                        android:textColor="#102B5E"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="8dp" />
+
+                    <!-- Username -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilUsername"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Username"
+                        app:boxStrokeColor="#102B5E"
+                        app:startIconDrawable="@drawable/ic_student"
+                        app:startIconTint="#102B5E">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etUsername"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:textColor="#102B5E" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Email -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilEmail"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Email"
+                        app:boxStrokeColor="#102B5E"
+                        app:startIconDrawable="@android:drawable/ic_dialog_email"
+                        app:startIconTint="#102B5E"
+                        app:helperText="Otomatis diisi berdasarkan NIP">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:textColor="#102B5E" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Password -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPassword"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="32dp"
+                        android:hint="Password"
+                        app:boxStrokeColor="#102B5E"
+                        app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+                        app:startIconTint="#102B5E"
+                        app:passwordToggleEnabled="true">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:textColor="#102B5E" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSimpan"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="Tambah Guru Sekarang"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-black"
+                        app:cornerRadius="16dp"
+                        app:backgroundTint="#102B5E" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- SPACER JITU -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                app:layout_constraintTop_toBottomOf="@id/mainCard" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
